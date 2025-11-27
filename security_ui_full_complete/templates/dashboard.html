@@ -1,0 +1,40 @@
+<!doctype html>
+<html><head>
+<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+<h1>Security Tool Dashboard</h1>
+<div class="box">
+<h3>New Scan</h3>
+<form action="/scan" method="post" enctype="multipart/form-data">
+<label>Single Domain</label>
+<input type="text" name="domain">
+<label>Bulk File</label>
+<input type="file" name="file">
+<button>Run Scan</button>
+</form>
+</div>
+</aside>
+
+<main class="main">
+<h2>Scan History</h2>
+<table class="results">
+<thead><tr>
+<th>ID</th><th>Domain</th><th>Status</th><th>Details</th>
+</tr></thead>
+<tbody>
+{% for s in scans %}
+<tr>
+<td>{{s.id}}</td>
+<td>{{s.domain}}</td>
+<td class="status {{s.status}}">{{s.status}}</td>
+<td><a href="/detail/{{s.id}}">view</a></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</main>
+</div>
+</body></html>

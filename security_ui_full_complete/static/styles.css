@@ -1,0 +1,1 @@
+body{background:#111;color:#eee;font-family:sans-serif;} .sidebar{background:#222;padding:20px;} .box{margin-bottom:20px;} .results{width:100%;} .status.pending{color:orange;} .status.running{color:cyan;} .status.done{color:lightgreen;} .status.error{color:red;}
