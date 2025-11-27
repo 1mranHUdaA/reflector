@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Scan #{{ scan.id }} — {{ scan.domain }}</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<div class="detail-layout">
+  <a href="/" class="back-link">← Back</a>
+  <h1>Scan #{{ scan.id }} — {{ scan.domain }}</h1>
+  <p>Status: <span class="status {{ scan.status }}">{{ scan.status }}</span></p>
+  <p>Created: {{ scan.created_at }}</p>
+
+  <h2>Parameters (from parameter.sh)</h2>
+  <pre class="output">{{ scan.parameters or 'None' }}</pre>
+
+  <h2>Hidden Parameters (from hidden.py)</h2>
+  <pre class="output">{{ scan.hidden_params or 'None' }}</pre>
+
+  <h2>Reflected URLs (from xsslection.py)</h2>
+  <pre class="output">{{ scan.xss_urls or 'None' }}</pre>
+</div>
+</body>
+</html>
