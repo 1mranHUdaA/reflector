@@ -1,7 +1,0 @@
-fastapi
-uvicorn
-jinja2
-sqlalchemy
-python-multipart
-requests
-beautifulsoup4
